@@ -1,0 +1,385 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #181818;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+.steps {
+    display: flex;
+    gap: 2rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step span {
+    background-color: #7f8c8d;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.step.active span {
+    background-color: #40295e;
+}
+
+.step p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Contenido principal */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.main-content h1 {
+    color: #181818;
+    margin-bottom: 2rem;
+}
+
+.productos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.producto {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.8s ease; /* Transición más lenta para todos los efectos */
+}
+
+/* Efecto hover para los productos */
+.producto:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-2px); /* Levanta ligeramente el elemento */
+}
+
+
+.producto img {
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.info {
+    flex: 1;
+}
+
+.info h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.descripcion {
+    color: #7f8c8d;
+    margin: 0.5rem 0;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #381e5a;
+    margin: 1rem 0;
+}
+
+/* Estilo para el botón eliminar con transición más lenta */
+.btn-eliminar {
+    background-color: #40295e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 1.0s ease; /* Transición más lenta */
+}
+
+.btn-eliminar:hover {
+    background-color: #7e5ec3;
+    box-shadow: 0 2px 8px rgba(67, 35, 131, 0.3); /* Sombra sutil */
+}
+
+/* Resumen de compra */
+.resumen {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.resumen h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.detalle {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.detalle.total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.btn-pagar {
+    background-color: #40295e;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: background-color 1.0s ease; /* Transición más lenta */
+
+}
+
+.btn-pagar:hover {
+    background-color: #7e5ec3;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-contenido {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* Estilo para el botón de cerrar (X) */
+.cerrar {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 24px;
+    color: #40295e;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Efecto hover */
+.cerrar:hover {
+    color: #40295e;
+}
+
+.cerrar:focus {
+    outline: none;
+}
+
+.cerrar::before {
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #181818;
+}
+
+/* Oculta el radio button por defecto */
+.metodos-pago input[type="radio"] {
+    display: none;
+}
+
+/* Estilo personalizado para el radio button */
+.metodos-pago input[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border: 2px solid #7f8c8d;
+    border-radius: 50%;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+/* Estilo cuando está seleccionado */
+.metodos-pago input[type="radio"]:checked + label::before {
+    background-color: #40295e; /* Color del círculo seleccionado */
+    border-color: #381e5a; /* Color del borde */
+    box-shadow: inset 0 0 0 3px white; /* Círculo interno blanco */
+}
+
+.metodos-pago label {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+}
+
+.metodos-pago label i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #181818;
+}
+
+.metodo {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.metodo:hover {
+    background-color: #f8f9fa;
+}
+
+.metodo input {
+    margin-right: 1rem;
+}
+
+.metodo label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+}
+
+.metodo i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #181818;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .steps {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    .producto {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .producto img {
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-contenido {
+        width: 90%;
+        margin: 20% auto;
+    }
+
+    /* Estilos para el modal compatible */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-contenido {
+        background-color: white;
+        margin: 10% auto;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 50%;
+        max-width: 600px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    .cerrar {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #7f8c8d;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .cerrar:hover {
+        color: #333;
+    }
+}

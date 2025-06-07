@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Carros - Pago</title>
+    <link rel="stylesheet" href="../styles/paymentStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+        <i class="fas fa-car"></i>
+        <span>DeWitt</span>
+    </div>
+    <nav class="steps">
+        <div class="step active">
+            <span>1</span>
+            <p>Carrito</p>
+        </div>
+        <div class="step">
+            <span>2</span>
+            <p>Pago</p>
+        </div>
+        <div class="step">
+            <span>3</span>
+            <p>Confirmación</p>
+        </div>
+    </nav>
+</header>
+
+<main class="main-content">
+    <h1>Tu selección de carros</h1>
+
+    <section class="productos-container">
+        <!-- Producto 1 -->
+        <article class="producto">
+            <img src="../Imagenes/Nissan%20v2.jpg" alt="Carro Deportivo">
+            <div class="info">
+                <h3>Carro Deportivo X200</h3>
+                <p class="descripcion">Modelo 2023, 0 km, color rojo, motor V8</p>
+                <p class="precio">$45,000 USD</p>
+                <button class="btn-eliminar"><i class="fas fa-trash"></i> Eliminar</button>
+            </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="producto">
+            <img src="../Imagenes/Hyunday.jpg" alt="SUV Familiar">
+            <div class="info">
+                <h3>SUV Familiar Comfort</h3>
+                <p class="descripcion">Modelo 2022, 5,000 km, color azul, 7 asientos</p>
+                <p class="precio">$35,000 USD</p>
+                <button class="btn-eliminar"><i class="fas fa-trash"></i> Eliminar</button>
+            </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="producto">
+            <img src="../Imagenes/chevrolet.jpg" alt="Pickup 4x4">
+            <div class="info">
+                <h3>Pickup 4x4 Adventure</h3>
+                <p class="descripcion">Modelo 2023, 0 km, color negro, diesel</p>
+                <p class="precio">$50,000 USD</p>
+                <button class="btn-eliminar"><i class="fas fa-trash"></i> Eliminar</button>
+            </div>
+        </article>
+    </section>
+
+    <aside class="resumen">
+        <h2>Resumen de compra</h2>
+        <div class="detalle">
+            <p>Subtotal (3 productos):</p>
+            <p>$130,000 USD</p>
+        </div>
+        <div class="detalle">
+            <p>Envío:</p>
+            <p>$2,500 USD</p>
+        </div>
+        <div class="detalle total">
+            <p>Total:</p>
+            <p>$132,500 USD</p>
+        </div>
+        <button id="btn-pagar" class="btn-pagar">Continuar con el pago</button>
+    </aside>
+</main>
+
+<div id="modal-pago" class="modal">
+    <div class="modal-contenido">
+        <button class="cerrar">&times;</button>
+        <h2>Selecciona tu método de pago</h2>
+
+        <form class="metodos-pago">
+            <fieldset class="metodo">
+                <input type="radio" name="metodo-pago" id="tarjeta">
+                <label for="tarjeta">
+                    <i class="fas fa-credit-card"></i>
+                    Tarjeta de crédito/débito
+                </label>
+            </fieldset>
+
+            <fieldset class="metodo">
+                <input type="radio" name="metodo-pago" id="transferencia">
+                <label for="transferencia">
+                    <i class="fas fa-university"></i>
+                    Transferencia bancaria
+                </label>
+            </fieldset>
+
+            <fieldset class="metodo">
+                <input type="radio" name="metodo-pago" id="financiamiento">
+                <label for="financiamiento">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    Financiamiento
+                </label>
+            </fieldset>
+
+        </form>
+
+        <button class="btn-pagar">Confirmar pago</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('modal-pago');
+        const btnPagar = document.getElementById('btn-pagar');
+        const btnCerrar = document.querySelector('.cerrar');
+
+        btnPagar.addEventListener('click', function() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Evita el scroll cuando el modal está abierto
+        });
+
+        btnCerrar.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaura el scroll
+        });
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
+</body>
+</html>
